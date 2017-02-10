@@ -1,6 +1,9 @@
 # HugoWiki
 A hugo theme for tutorials. _HugoWiki_ is compatible with right-to-left languages like Urdu.
 
+![desktop](desktop.png)
+
+<img src="mobile.png" width="256px">
 
 ## Usage
 Content in _HugoWiki_ is divided into parts and subparts. There are no taxonomies (tags, categories etc.) or sections. First, clone the theme into your `Site\Themes\` directory. Then add the part definitions to your site `config` file.
@@ -38,3 +41,6 @@ hascode = false       # if true, Highlight.js is loaded for syntax highlighting
 hasmath = false       # if true, MathJax is loaded for LaTeX style formatting
 
 ```
+
+To populate the main page, create file `content\_index.md` in your site directory.
+Regular markdown rules apply.
