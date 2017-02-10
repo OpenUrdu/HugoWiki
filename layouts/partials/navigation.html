@@ -1,0 +1,6 @@
+<div class="navigation">
+    <div class="prev">
+        {{$f := first 1 (where (sort .Site.pages ".Params.subpart") ".Params.part" .Params.part)}}
+    </div>
+    <div class="next"></div>
+</div>

@@ -3,11 +3,27 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{if eq .Site.LanguageCode "ur"}}
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/earlyaccess/notonastaliqurdudraft.css">
+    {{end}}
     <link rel="stylesheet" type="text/css" href="/css/layout.css">
+    <link rel="stylesheet" type="text/css" href="/css/cosmetic.css">
     {{if eq .Site.Params.dir "rtl"}}
         <link rel="stylesheet" type="text/css" href="/css/rtl.css">
     {{else}}
         <link rel="stylesheet" type="text/css" href="/css/ltr.css">
+    {{end}}
+    {{if .IsPage}}
+        {{if .Params.hascode}}
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+            <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/atom-one-dark.min.css">
+            <script>hljs.initHighlightingOnLoad();</script>
+        {{end}}
+        {{if .Params.hasequations}}
+            <script type="text/javascript" async
+                src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+            </script>
+        {{end}}
     {{end}}
 </head>
 <body>

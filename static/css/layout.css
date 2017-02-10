@@ -12,21 +12,54 @@ html, body {
     max-width: 256px;
     min-width: 192px;
     height: 100%;
-    background-color: red;
+    overflow-y: auto;
 }
-.sidebar * {
-    padding: 0.2em
+.sidebar .sb-icon {
+    display: none;
 }
-.sidebar .sb-title {
+.sidebar .sb-title,
+.sidebar .sb-icon {
     text-align: center;
+}
+.sidebar .index {
+    margin: 0px;
+    padding: 0.2em 5%;
+    width: 90%;
+}
+.sidebar .index > li {
+    font-size: 1em;
+}
+.sidebar .subindex {
+    padding: 0px;
+    display: none;
+}
+.sidebar .subindex li {
+    width: 100%;
+    padding: 0em 5%;
+    font-size: 0.8em;
+}
+.active-part,
+.sidebar .index li:focus > .subindex,
+.sidebar .index li:active > .subindex {
+    display: block;
+}
+.sidebar .index li,
+.sidebar .subindex li {
+    display: block;
+    padding: 0.2em 0em;
+    margin: 0;
+}
+.sidebar .active-part {
+    display: block;
 }
 
 .content {
     width: 60%;
     padding: 1em;
-    height: 30%;
-    background-color: green;
     min-width: 480px;
+}
+.content pre {
+    overflow-x: auto;
 }
 
 
@@ -36,8 +69,42 @@ html, body {
             width: 70%;
     }
     .sidebar {
-        background-color: blue;
         min-width: inherit;
         width: 64px;
     }
+    .sidebar .sb-title {
+        display: none;
+        visibility: hidden;
+    }
+    .sidebar .sb-icon {
+        display: block;
+    }
+    .sidebar:hover,
+    .sidebar:focus {
+        width: 192px;
+    }
+    .sidebar:hover .index,
+    .sidebar:focus .index,
+    .sidebar:hover .sb-title,
+    .sidebar:focus .sb-title {
+        display: block;
+        animation: fadeIn 0.05s;
+        animation-fill-mode: forwards;
+    }
+    .sidebar:hover .sb-icon,
+    .sidebar:focus .sb-icon,
+    .sidebar .index {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+
+@keyframes fadeIn {
+  99% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
 }

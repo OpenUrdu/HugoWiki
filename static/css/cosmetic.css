@@ -1,0 +1,51 @@
+/* COLOUR SCHEME
+
+#003430
+#0D4E49
+#236863
+#41837E
+#689D99
+
+*/
+.sidebar *,
+.content:not(code):not(pre) {
+    transition: 0.25s;
+    font-family: 'Noto Nastaliq Urdu Draft', "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+.sidebar .index > li {
+    cursor: pointer;
+}
+.sidebar {
+    background-color: #0D4E49;
+    color: #689D99;
+}
+.sidebar .active-part,
+.sidebar .index li:focus,
+.sidebar .index li:hover {
+    background-color: #236863;
+}
+.sidebar .active-page,
+.sidebar .subindex li:hover{
+    background-color: #41837E;
+    color: #0D4E49;
+}
+.sidebar a,
+.sidebar a:visited {
+    color: #689D99;
+    text-decoration: none;
+}
+
+.content a,
+.content a:visited {
+    text-decoration: underline;
+    color: #236863;
+}
+.content a:hover {
+    color: #0D4E49;
+}
+.content p > code,
+.ltr p > code,
+.rtl p > code {
+    background-color: #689D99;
+    padding: 0em 0.2em;
+}

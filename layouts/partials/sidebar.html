@@ -1,13 +1,16 @@
 <div class="sidebar">
-    <h2 class="sb-title">{{.Site.Title}}</h2>
+    <h2 class="sb-title"><a href="/">{{.Site.Title}}</a></h2>
+    <h2 class="sb-icon">☰</h2>
     <ul class="index">
+        {{$currPage := .}}
         {{range $k, $v := .Site.Params.parts}}
-            <li>{{$k}} - {{$v}}</li>
-            <ul class = "subindex">
-                {{range (where (sort $.Site.Pages "Params.subpart") "Params.part" $k)}}
-                    <a href="{{.RelPermalink}}"><li>{{.Params.subpart}} - {{.Title}}</li></a>
-                {{end}}
-            </ul>
+            <li tabindex="{{$k}}">{{$k}} - {{$v}}
+                <ul class="{{if eq $k $currPage.Params.part}}active-part{{end}} subindex">
+                    {{range (where (sort $.Site.Pages "Params.subpart") "Params.part" $k)}}
+                        <a href="{{.RelPermalink}}"><li class="{{if eq .RelPermalink $currPage.RelPermalink}}active-page{{end}}">{{.Params.subpart}} - {{.Title}}</li></a>
+                    {{end}}
+                </ul>
+            </li>
         {{end}}
     </ul>
 </div>
