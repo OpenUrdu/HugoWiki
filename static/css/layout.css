@@ -1,0 +1,43 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    word-wrap: break-word;
+}
+
+.sidebar {
+    position: fixed;
+    width: 15%;
+    max-width: 256px;
+    min-width: 192px;
+    height: 100%;
+    background-color: red;
+}
+.sidebar * {
+    padding: 0.2em
+}
+.sidebar .sb-title {
+    text-align: center;
+}
+
+.content {
+    width: 60%;
+    padding: 1em;
+    height: 30%;
+    background-color: green;
+    min-width: 480px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .content {
+            min-width: 128px;
+            width: 70%;
+    }
+    .sidebar {
+        background-color: blue;
+        min-width: inherit;
+        width: 64px;
+    }
+}

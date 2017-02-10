@@ -1,0 +1,14 @@
+.sidebar {
+
+}
+
+.content {
+    margin: 0 30% 0 10%;
+}
+
+
+@media screen and (max-width: 768px) {
+    .content {
+        margin: 0 20% 0 5%;
+    }
+}

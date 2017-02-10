@@ -1,0 +1,13 @@
+<div class="sidebar">
+    <h2 class="sb-title">{{.Site.Title}}</h2>
+    <ul class="index">
+        {{range $k, $v := .Site.Params.parts}}
+            <li>{{$k}} - {{$v}}</li>
+            <ul class = "subindex">
+                {{range (where (sort $.Site.Pages "Params.subpart") "Params.part" $k)}}
+                    <a href="{{.RelPermalink}}"><li>{{.Params.subpart}} - {{.Title}}</li></a>
+                {{end}}
+            </ul>
+        {{end}}
+    </ul>
+</div>
